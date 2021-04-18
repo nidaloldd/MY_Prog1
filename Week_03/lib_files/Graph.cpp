@@ -1196,6 +1196,13 @@ void Textbox::set_color(Color c)
     Box::set_color(c);
     label.set_color(c);
 }
+//-----------------------------------------------------------------------------
+
+void Textbox::set_font_size(int s)
+{
+    
+    label.set_font_size(s);
+}
 
 //------------------------------------------------------------------------------
 

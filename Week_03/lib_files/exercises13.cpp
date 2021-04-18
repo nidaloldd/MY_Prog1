@@ -1,10 +1,11 @@
 #include "Simple_window.h"
 #include "Graph.h"
+#include "../../../std_lib_facilities.h"
 
 int main()
 try{
 	using namespace Graph_lib;
-	
+/*
 	Point t1(200,50);
 	Simple_window win(t1,800,1000,"exercises 13");
 
@@ -79,12 +80,75 @@ try{
 	win.attach(sw2);
 	Arrow cenr2(center(cir1), Point(center(cir1).x+30, center(cir1).y+30));
 	win.attach(cenr2);
+
 //6
 
+	Point t2(200,50);
+	Simple_window win2(t2,800,1000,"exercise 6");
+
+	Textbox tb1 (Point(400,50),80,"Shape");
+	tb1.set_font_size(20);
+	win2.attach(tb1);
+	Textbox tb2 (Point(100,150),80,"Lines");
+	tb2.set_font_size(20);
+	win2.attach(tb2);
+	Textbox tb3 (Point(200,150),90,"Polygon");
+	tb3.set_font_size(20);
+	win2.attach(tb3);
+	Textbox tb4 (Point(300,150),80,"Axis");
+	tb4.set_font_size(20);
+	win2.attach(tb4);
+	Textbox tb5 (Point(400,150),120,"Rectangle");
+	tb5.set_font_size(20);
+	win2.attach(tb5);
+	Textbox tb6 (Point(540,150),80,"Text");
+	tb6.set_font_size(20);
+	win2.attach(tb6);
+	Textbox tb7 (Point(640,150),80,"Image");
+	tb7.set_font_size(20);
+	win2.attach(tb7);
+
+	
+	Vector_ref<Arrow> arrow_vec;
+
+	for (int i = 0; i < 6; ++i)
+	{
+		arrow_vec.push_back(new Arrow(Point(140+i*100,150),Point(400+i*10,75)));
+		win2.attach(arrow_vec[i]);
+	}
+
+	win2.wait_for_button();
+
+*/
+	Point t3(200,50);
+	Simple_window win3(t3,800,1000,"exercise 7");
+
+	Vector_ref <Rectangle> rec_vec;
+	int X=0;
+	int Y=0;
+	int s =0;
+	for (int r = 0; r < 250; r+=50)
+	{
+		for (int g = 0; g < 250; g+=50)
+		{
+			for (int b = 0; b < 250; b+=50)
+			{
+				rec_vec.push_back(new Rectangle(Point(X,Y),50,50));
+				rec_vec[s].set_fill_color(fl_rgb_color(r,g,b));
+				rec_vec[s].set_color(fl_rgb_color(r,g,b));
+				win3.attach(rec_vec[s]);
+				s++;
+				X+=50;
+				if(X>600){X=0;Y+=50;};
+				if(Y>800){win3.wait_for_button();X=0;Y=0; }
+			}
+		}
+	}
 
 
+	win3.wait_for_button();
 
-	win.wait_for_button();	
+	//win.wait_for_button();	
 
 	
 }catch(exception& e){
