@@ -506,6 +506,7 @@ struct Textbox : Box {
     void draw_lines() const;
     void move(int dx, int dy);
     void set_color(Color c);
+    void set_font_size(int s);
 
     Text label;
 private:
