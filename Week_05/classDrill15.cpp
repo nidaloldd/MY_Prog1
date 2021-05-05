@@ -1,8 +1,5 @@
-//#include "lib_files/Simple_window.h"
-//#include "lib_files/Graph.h"
 #include "../../std_lib_facilities.h"
 
-//g++ main.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o main `fltk-config --ldflags --use-images`
 
 struct Person
 {
@@ -25,14 +22,14 @@ Person:: Person(string ff , string ss, int aa)
 :fn(ff),sn(ss),a(aa){
 		
 
-		string n = ff+' '+ss;
+		string name = ff+' '+ss;
 		
 		if(aa<0 or aa>150){error("age is wrong");}
 		
-		for (int i = 0; i < n.size(); ++i)
+		for (int i = 0; i < name.size(); ++i)
 		{	
 
-			switch(n[i])
+			switch(name[i])
 			case ';': case ':':	case '"': case '[':case ']' :
 			case '*': case '&': case '^': case '%' :case '$':
 			case '#': case '@': case '!': error("wrong name");	
@@ -43,9 +40,9 @@ Person:: Person(string ff , string ss, int aa)
 
 istream& operator>>(istream& is, Person& p)
 {
-	string fn;
-	string sn;
-	int a;
+	string fn;    //first name
+	string sn;    // secund name
+	int a;        // age
 
 	is >> fn >> sn >> a;
 
@@ -71,9 +68,12 @@ int main()
 
 	vector<Person> vec ;
 
-	for (Person p(); cin >> p;)
+
+    cout << "write here a first name a secund name and an age" << endl 
+    << "if you want to quit write '|' to first and secund name" << endl;
+	for (Person p; cin >> p;)
 	{
-		if(p.first_name()=="|" or p.secund_name() == "|"){break;}
+		if(p.first_name()=="|" and p.secund_name() == "|" ){break;}
 
 		vec.push_back(p);
 	}

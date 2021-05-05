@@ -1,12 +1,6 @@
 #include "lib_files/std_lib_facilities.h"
 
-class Fct
-{
-public:
-	Fct();
-	
-};
-
+//01
 int fac(int n) { return n>1 ? n*fac(n-1) : 1;};
 
 int fac1(int n)
@@ -19,6 +13,16 @@ int fac1(int n)
 	}
 	return s;
 }
+
+
+//02
+class Fct
+{
+public:
+	Fct();
+	
+};
+
 
 int main()
 {

@@ -1,7 +1,7 @@
 #include "lib_files/Simple_window.h"
 #include "lib_files/Graph.h"
 
-//g++ main.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o main `fltk-config --ldflags --use-images`
+//g++ Drill15.cpp lib_files/Graph.cpp lib_files/Window.cpp lib_files/GUI.cpp lib_files/Simple_window.cpp -o main `fltk-config --ldflags --use-images`
 
 
 double one (double d) {return 1;}

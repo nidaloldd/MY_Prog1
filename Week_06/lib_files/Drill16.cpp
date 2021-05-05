@@ -23,13 +23,15 @@ void hide_s_menu() { style_menu.hide(); menu_s_button.show(); }
 // widgets: 
 Button next_button; // add (next_x,next_y) to lines 
 Button quit_button; // end program 
+Button menu_c_button; 
+Button menu_s_button; 
+Menu color_menu; 
+Menu style_menu; 
 In_box next_x; 
 In_box next_y; 
 Out_box xy_out; 
-Menu color_menu; 
-Menu style_menu; 
-Button menu_c_button; 
-Button menu_s_button; 
+
+
 // actions invoked by cal lbacks: 
 void red_pressed() { change_c(Color::red); hide_c_menu(); } 
 void blue_pressed() { change_c(Color::blue); hide_c_menu(); } 
@@ -61,7 +63,7 @@ menu_s_button{Point(0,30), 80, 20, "style_menu", [](Address, Address pw) {refere
 next_button{Point(x_max()-150,0), 70, 20, "Next point", [](Address, Address pw) {reference_to<Lines_window>(pw).next();}}, 
 quit_button{Point(x_max()-70,0), 70, 20, "Quit", [](Address, Address pw) {reference_to<Lines_window>(pw).quit();}}, 
 next_x{Point(x_max()-310,0), 50, 20, "next x:"}, 
-next_y{Point(x_max()-210,0), 50, 20, "next y: "}, 
+next_y{Point(x_max()-210,0), 50, 20, "next y:"}, 
 xy_out{Point(100,0), 60, 20, "current (x,y):"} 
 {
 attach(next_button); 
@@ -82,6 +84,7 @@ style_menu.attach(new Button(Point(0,0),0,0, "solid" ,[](Address, Address pw) {r
 attach(color_menu); 
 attach(style_menu); 
 color_menu.hide(); 
+style_menu.hide(); 
 attach(menu_c_button); 
 attach(menu_s_button); 
 attach(lines); 
@@ -108,7 +111,7 @@ void Lines_window::next()
 
 int main()
 {
-    Lines_window win {Point{100,100}, 600, 500, "Lines"};
+    Lines_window win {Point{100,100}, 600, 500, "Drill16"};
     
     return gui_main();
 }

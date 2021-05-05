@@ -2,40 +2,40 @@
 
 template<typename T> 
 struct S{
-	explicit S(T vv = 0) : val{vv} { }
-	S& operator=(const T&);
-	T& get();
-	const T& get() const;
-	void set(T new_val) { val = new_val; };
+    explicit S(T vv = 0) : val{vv} { }
+    S& operator=(const T&);
+    T& get();
+    const T& get() const;
+    void set(T new_val) { val = new_val; };
 
 private:
-	T val;
-	T new_val;
+    T val;
+    T new_val;
 };
 
 template<typename T>
 T& S<T>::get()
 {
-	return val;
+    return val;
 }
 
 template<typename T>
 const T& S<T>::get() const
 {
-	return val;
+    return val;
 }
 
 template<typename T>
 S<T>& S<T>::operator=(const T& new_val)
 {
-	val = new_val;
-	return *this;
+    val = new_val;
+    return *this;
 }
 
 template<typename T>
 void read_val(T& v)
 {
-	cin >> v;
+    cin >> v;
 }
 
 template<typename T>
@@ -71,16 +71,16 @@ istream& operator>>(istream& is, vector<T>& v)
 
 int main()
 {
-	S<int> num {15};
-	S<char> letter {'b'};
-	S<double> floating {21.2};
-	S<string> word {"something"};
-	S<vector<int>> v { vector<int>{15, 23, 12, 41} };
-	
-	cout << num.get() << endl;
-	cout << letter.get() << endl;
-	cout << floating.get() << endl;
-	cout << word.get() << endl;
+    S<int> num {15};
+    S<char> letter {'b'};
+    S<double> floating {21.2};
+    S<string> word {"something"};
+    S<vector<int>> v { vector<int>{15, 23, 12, 41} };
+    
+    cout << num.get() << endl;
+    cout << letter.get() << endl;
+    cout << floating.get() << endl;
+    cout << word.get() << endl;
     for (auto& a : v.get())
         cout << a << ' ';
     cout << '\n';
@@ -123,5 +123,5 @@ int main()
     
     
 
-	return 0;
+    return 0;
 }

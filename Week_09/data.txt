@@ -1,0 +1,10 @@
+aaa 01 33
+bbb 02 23
+Karcsi 03 23
+ddd 04 54
+Zoli 05 34
+fff 06 23
+zzz 07 65
+kkk 08 34
+www 09 13
+vvv 10 43

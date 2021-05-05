@@ -25,7 +25,7 @@ public:
 
 class D21 : public B2{ //string
 public:
-	string s = "random";
+	string s = "string";
 	void pvf() override { cout << s << '\n'; }
 };
 
